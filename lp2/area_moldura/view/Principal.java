@@ -145,13 +145,19 @@ public class Principal {
 				String textAltura = txtAltura.getText();
 				String textSpacing = txtSpacing.getText();
 				
-				float base = Float.parseFloat(textBase);
-				float altura = Float.parseFloat(textAltura);
-				float spacing = Float.parseFloat(textSpacing);
+				if(textBase.isEmpty() || textAltura.isEmpty() || textSpacing.isEmpty()) {
+					lblRes.setText("Você deve digitar todos os valores! ");
+				} else {
+					float base = Float.parseFloat(textBase);
+					float altura = Float.parseFloat(textAltura);
+					float spacing = Float.parseFloat(textSpacing);
+					
+					String res = String.format("%.0f", calc.calculaMoldura(base, altura, spacing));
+					
+					lblRes.setText("Resultado: " + res);
+					
+				}
 				
-				String res = String.format("%.0f", calc.calculaMoldura(base, altura, spacing));
-				
-				lblRes.setText("Resultado: " + res);
 			}
 		});
 		
