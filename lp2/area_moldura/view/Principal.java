@@ -17,6 +17,7 @@ import java.awt.Window.Type;
 import javax.swing.SwingConstants;
 import model.Calc;
 import java.awt.Color;
+import java.awt.Font;
 
 public class Principal {
 
@@ -71,7 +72,8 @@ public class Principal {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		frmTed.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblTitulo = new JLabel("Calcular \u00E1rea de uma Moldura");
+		JLabel lblTitulo = new JLabel("Calcular \u00E1rea da Moldura");
+		lblTitulo.setFont(new Font("Monospaced", Font.PLAIN, 16));
 		GridBagConstraints gbc_lblTitulo = new GridBagConstraints();
 		gbc_lblTitulo.insets = new Insets(0, 0, 5, 5);
 		gbc_lblTitulo.gridx = 6;
@@ -79,6 +81,7 @@ public class Principal {
 		frmTed.getContentPane().add(lblTitulo, gbc_lblTitulo);
 		
 		JLabel lblInsiraABase = new JLabel("Insira a Base externa");
+		lblInsiraABase.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblInsiraABase = new GridBagConstraints();
 		gbc_lblInsiraABase.insets = new Insets(0, 0, 5, 5);
 		gbc_lblInsiraABase.gridx = 6;
@@ -86,6 +89,7 @@ public class Principal {
 		frmTed.getContentPane().add(lblInsiraABase, gbc_lblInsiraABase);
 		
 		txtBase = new JTextField();
+		lblInsiraABase.setLabelFor(txtBase);
 		txtBase.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_txtBase = new GridBagConstraints();
 		gbc_txtBase.insets = new Insets(0, 0, 5, 5);
@@ -96,6 +100,7 @@ public class Principal {
 		txtBase.setColumns(10);
 		
 		JLabel lblInsiraAAltura = new JLabel("Insira a Altura externa");
+		lblInsiraAAltura.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblInsiraAAltura = new GridBagConstraints();
 		gbc_lblInsiraAAltura.insets = new Insets(0, 0, 5, 5);
 		gbc_lblInsiraAAltura.gridx = 6;
@@ -103,6 +108,7 @@ public class Principal {
 		frmTed.getContentPane().add(lblInsiraAAltura, gbc_lblInsiraAAltura);
 		
 		txtAltura = new JTextField();
+		lblInsiraAAltura.setLabelFor(txtAltura);
 		txtAltura.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_txtAltura = new GridBagConstraints();
 		gbc_txtAltura.insets = new Insets(0, 0, 5, 5);
@@ -113,6 +119,7 @@ public class Principal {
 		txtAltura.setColumns(10);
 		
 		JLabel lblSpacing = new JLabel("Insira o espa\u00E7o entre ret\u00E2ngulos");
+		lblSpacing.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblSpacing = new GridBagConstraints();
 		gbc_lblSpacing.insets = new Insets(0, 0, 5, 5);
 		gbc_lblSpacing.gridx = 6;
@@ -120,6 +127,8 @@ public class Principal {
 		frmTed.getContentPane().add(lblSpacing, gbc_lblSpacing);
 		
 		JLabel lblRes = new JLabel("Resultado: ");
+		lblRes.setForeground(new Color(0, 0, 51));
+		lblRes.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
 		GridBagConstraints gbc_lblRes = new GridBagConstraints();
 		gbc_lblRes.anchor = GridBagConstraints.SOUTH;
 		gbc_lblRes.insets = new Insets(0, 0, 0, 5);
@@ -128,6 +137,7 @@ public class Principal {
 		frmTed.getContentPane().add(lblRes, gbc_lblRes);
 		
 		txtSpacing = new JTextField();
+		lblSpacing.setLabelFor(txtSpacing);
 		txtSpacing.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_txtSpacing = new GridBagConstraints();
 		gbc_txtSpacing.insets = new Insets(0, 0, 5, 5);
@@ -148,17 +158,21 @@ public class Principal {
 				if(textBase.isEmpty() || textAltura.isEmpty() || textSpacing.isEmpty()) {
 					lblRes.setText("Você deve digitar todos os valores! ");
 				} else {
-					float base = Float.parseFloat(textBase);
-					float altura = Float.parseFloat(textAltura);
-					float spacing = Float.parseFloat(textSpacing);
-					
-					String res = String.format("%.0f", calc.calculaMoldura(base, altura, spacing));
-					
-					lblRes.setText("Resultado: " + res);
-					
+					calcula(textBase, textAltura, textSpacing);
 				}
 				
 			}
+			
+			private void calcula(String tb, String ta, String ts) {
+				float base = Float.parseFloat(tb);
+				float altura = Float.parseFloat(ta);
+				float spacing = Float.parseFloat(ts);
+				
+				String res = String.format("%.0f", calc.calculaMoldura(base, altura, spacing));
+				
+				lblRes.setText("Resultado: " + res);
+			}
+			
 		});
 		
 		GridBagConstraints gbc_btnCalcular = new GridBagConstraints();
