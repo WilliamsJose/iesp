@@ -34,7 +34,7 @@ public class Principal {
 			public void run() {
 				try {
 					Principal window = new Principal();
-					window.frmTed.setBounds(450, 150, 320, 360);
+					window.frmTed.setBounds(450, 150, 560, 370);
 					window.frmTed.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,7 +57,6 @@ public class Principal {
 		Calc calc = new Calc();
 		frmTed = new JFrame();
 		frmTed.getContentPane().setBackground(new Color(0, 255, 255));
-		frmTed.setResizable(false);
 		frmTed.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmTed.setType(Type.UTILITY);
 		frmTed.setTitle("TED\r\n");
@@ -83,8 +82,9 @@ public class Principal {
 		JLabel lblInsiraABase = new JLabel("Insira a Base externa");
 		lblInsiraABase.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblInsiraABase = new GridBagConstraints();
+		gbc_lblInsiraABase.gridwidth = 13;
 		gbc_lblInsiraABase.insets = new Insets(0, 0, 5, 5);
-		gbc_lblInsiraABase.gridx = 6;
+		gbc_lblInsiraABase.gridx = 0;
 		gbc_lblInsiraABase.gridy = 2;
 		frmTed.getContentPane().add(lblInsiraABase, gbc_lblInsiraABase);
 		
@@ -102,8 +102,9 @@ public class Principal {
 		JLabel lblInsiraAAltura = new JLabel("Insira a Altura externa");
 		lblInsiraAAltura.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblInsiraAAltura = new GridBagConstraints();
+		gbc_lblInsiraAAltura.gridwidth = 13;
 		gbc_lblInsiraAAltura.insets = new Insets(0, 0, 5, 5);
-		gbc_lblInsiraAAltura.gridx = 6;
+		gbc_lblInsiraAAltura.gridx = 0;
 		gbc_lblInsiraAAltura.gridy = 4;
 		frmTed.getContentPane().add(lblInsiraAAltura, gbc_lblInsiraAAltura);
 		
@@ -121,8 +122,9 @@ public class Principal {
 		JLabel lblSpacing = new JLabel("Insira o espa\u00E7o entre ret\u00E2ngulos");
 		lblSpacing.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblSpacing = new GridBagConstraints();
+		gbc_lblSpacing.gridwidth = 13;
 		gbc_lblSpacing.insets = new Insets(0, 0, 5, 5);
-		gbc_lblSpacing.gridx = 6;
+		gbc_lblSpacing.gridx = 0;
 		gbc_lblSpacing.gridy = 6;
 		frmTed.getContentPane().add(lblSpacing, gbc_lblSpacing);
 		
@@ -130,9 +132,10 @@ public class Principal {
 		lblRes.setForeground(new Color(0, 0, 51));
 		lblRes.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
 		GridBagConstraints gbc_lblRes = new GridBagConstraints();
+		gbc_lblRes.gridwidth = 13;
 		gbc_lblRes.anchor = GridBagConstraints.SOUTH;
 		gbc_lblRes.insets = new Insets(0, 0, 0, 5);
-		gbc_lblRes.gridx = 6;
+		gbc_lblRes.gridx = 0;
 		gbc_lblRes.gridy = 10;
 		frmTed.getContentPane().add(lblRes, gbc_lblRes);
 		
@@ -163,12 +166,9 @@ public class Principal {
 				
 			}
 			
-			private void calcula(String tb, String ta, String ts) {
-				float base = Float.parseFloat(tb);
-				float altura = Float.parseFloat(ta);
-				float spacing = Float.parseFloat(ts);
+			private void calcula(String base, String altura, String spacing) {
 				
-				String res = String.format("%.0f", calc.calculaMoldura(base, altura, spacing));
+				String res = calc.calculaMoldura(base, altura, spacing);
 				
 				lblRes.setText("Resultado: " + res);
 			}
