@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Ex3 {
+public class L1Ex3 {
 
 	public static void main(String[] args) {
 		

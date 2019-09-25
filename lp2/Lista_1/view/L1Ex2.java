@@ -2,7 +2,7 @@ package view;
 
 import java.util.Scanner;
 
-public class Ex2 extends Ex1 {
+public class L1Ex2 extends L1Ex1 {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);

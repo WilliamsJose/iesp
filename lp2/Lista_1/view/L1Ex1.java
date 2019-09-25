@@ -1,6 +1,6 @@
 package view;
 
-public class Ex1 {
+public class L1Ex1 {
 	public static void main(String[] args) {
 		
 		int x1 = 2;
