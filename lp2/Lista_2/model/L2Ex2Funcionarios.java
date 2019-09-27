@@ -1,6 +1,6 @@
 package model;
 
-public class Funcionarios {
+public class L2Ex2Funcionarios {
 	
 	// Attributes
 	private String nome;
@@ -10,7 +10,7 @@ public class Funcionarios {
 	private double salario;
 	
 	// Constructor
-	public Funcionarios(String nome, String departamento, String dataEntrada, String rg, double salario) {
+	public L2Ex2Funcionarios(String nome, String departamento, String dataEntrada, String rg, double salario) {
 		this.nome = nome;
 		this.departamento = departamento;
 		this.dataEntrada = dataEntrada;
@@ -39,23 +39,23 @@ public class Funcionarios {
 	}
 	
 	// Setters
-	public String setNome(String newNome) {
-		return this.nome = newNome;
+	public void setNome(String newNome) {
+		this.nome = newNome;
 	}
-	public String setDepartamento(String newDepartamento) {
-		return this.departamento = newDepartamento;
+	public void setDepartamento(String newDepartamento) {
+		this.departamento = newDepartamento;
 	}
-	public String setDataEntrada(String newDataEntrada) {
-		return this.dataEntrada = newDataEntrada;
+	public void setDataEntrada(String newDataEntrada) {
+		this.dataEntrada = newDataEntrada;
 	}
-	public String setRg(String newRg) {
-		return this.rg = newRg;
+	public void setRg(String newRg) {
+		this.rg = newRg;
 	}
-	public double setSalario(double newSalario) {
-		return this.salario = newSalario;
+	public void setSalario(double newSalario) {
+		this.salario = newSalario;
 	}
-	public double setRecebeAumento(double newAumento) {
-		return this.salario = this.salario + newAumento;
+	public void setRecebeAumento(double newAumento) {
+		this.salario = this.salario + newAumento;
 	}
 
 }

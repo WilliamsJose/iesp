@@ -1,13 +1,13 @@
 package model;
 
-public class Alunos {
+public class L2Ex1Alunos {
 	
 	private String nome;
 	private String endereco;
 	private double matricula;
 	private double cpf;
 	
-	public Alunos(String nome, String endereco, double matricula, double cpf) {
+	public L2Ex1Alunos(String nome, String endereco, double matricula, double cpf) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.matricula = matricula;
@@ -28,7 +28,7 @@ public class Alunos {
 	}
 	
 	public String infoAlunos() {
-		return ("Nome: "+ getNome() +"\nCpf: "+ String.format("%.0f", getCpf()) +"\nMatrícula: "+ String.format("%.0f", getMatricula()) +"\nEndereço: "+ getEndereco());
+		return String.format("Nome: %s \nCpf: %.0f \nMatrícula: %.0f \nEndereço: %s", this.nome, this.cpf, this.matricula, this.endereco); 
 	}
 	
 }

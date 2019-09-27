@@ -2,13 +2,13 @@ package model;
 
 import java.util.Scanner;
 
-public class Lampada {
+public class L2Ex3Lampada {
 
 	private String state;
 	private int userIn;
 	Scanner input = new Scanner(System.in);
 
-	public Lampada(String state) {
+	public L2Ex3Lampada(String state) {
 		this.state = state;
 	}
 	

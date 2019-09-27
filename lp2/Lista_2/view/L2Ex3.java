@@ -2,14 +2,14 @@ package view;
 
 import java.util.Scanner;
 
-import model.Lampada;
+import model.L2Ex3Lampada;
 
 public class L2Ex3 {
 
 	public static void main(String[] args) {
 		String continua = "S";
 		
-		Lampada lamp = new Lampada("Luz Apagada!");
+		L2Ex3Lampada lamp = new L2Ex3Lampada("Luz Apagada!");
 		Scanner input = new Scanner(System.in);
 		
 		while(continua.equalsIgnoreCase("S")) {
