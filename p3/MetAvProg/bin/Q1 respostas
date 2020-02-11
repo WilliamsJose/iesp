@@ -1,7 +1,7 @@
-Reserva e Compra são tipos especiais de transação, por isso passa pela 1/5 regras. - OK
-Ambos os objetos Reserva e Compra não mudarão de classe, passando na 2/5. - OK
-Reserva e compra não sobrescrevem e nem anulam nenhuma variável ou método. 3/5 - OK
-Transação não é uma classe utilitária. 4/5 - OK
-Reserva e Compra expressam tipos especiais. 5/5 - OK
+1 - Reserva e Compra são tipos especiais de transação, por isso passa pela 1/5 regras. - OK
+2 - Ambos os objetos Reserva e Compra não mudarão de classe, passando na 2/5. - OK
+3 - Reserva e compra não sobrescrevem e nem anulam nenhuma variável ou método. 3/5 - OK
+4 - Transação não é uma classe utilitária. 4/5 - OK
+5 - Reserva e Compra expressam tipos especiais. 5/5 - OK
 
 Como na minha observação todas passam, a utilização da herança é uma escolha válida.
